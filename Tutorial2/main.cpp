@@ -1,5 +1,3 @@
-/* This is my code for Tutorial 2. */
-
 #include <iostream>
 #include <cmath>
 #include <vector>
