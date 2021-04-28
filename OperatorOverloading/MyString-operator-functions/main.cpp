@@ -1,0 +1,33 @@
+#include <iostream>
+#include "MyString.h"
+
+using std::cin;
+using std::cout;
+using std::endl;
+using std::boolalpha;
+
+int main() {
+    cout << boolalpha << endl;
+    MyString larry{"Larry"}; 
+    MyString moe{"Moe"};
+
+    MyString stooge = larry;
+    larry.display();                                   // Larry
+    moe.display();                                     // Moe
+
+    cout << (larry == moe) << endl;                    // false
+    cout << (larry == stooge) << endl;                 // true
+
+    larry.display();                                  // Larry
+    MyString larry2 {-larry};
+    larry2.display();                                 // larry
+
+    MyString stooges {larry + "Moe"};                // ok with member function
+    MyString stooges2 = "Larry" + moe;              // No compiler error since it's a function
+
+    MyString two_stooges {moe + " " + "Larry"};
+    two_stooges.display();                          // Moe Larry
+    MyString three_stooges {moe + " " + larry + " " +  "Curly"};
+    three_stooges.display();                       //  Moe Larry Curly
+    return 0;
+}
